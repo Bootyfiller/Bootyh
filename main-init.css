@@ -1,0 +1,4 @@
+body.app-initializing .app-shell,
+body.app-initializing #modal-root {
+  visibility: hidden;
+}

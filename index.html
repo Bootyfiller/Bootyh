@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Manage your studio with Polished." />
+  <title>Polished Auth</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="auth-ui.css" />
+</head>
+<body>
+  <main class="auth-stage">
+    <header class="stage-header">
+      <a class="brand" href="#signup" aria-label="Polished sign up"><span class="brand-mark">p</span><span>polished<span class="brand-dot">.</span></span></a>
+      <div class="preview-switch" role="group" aria-label="Preview authentication page">
+        <button class="preview-option is-active" type="button" data-view="signup" aria-pressed="true">Sign up</button>
+        <button class="preview-option" type="button" data-view="login" aria-pressed="false">Log in</button>
+      </div>
+    </header>
+
+    <section class="auth-content" aria-live="polite">
+      <article class="auth-card" id="signup-card" aria-labelledby="signup-title">
+        <div class="card-orb orb-one" aria-hidden="true"></div><div class="card-orb orb-two" aria-hidden="true"></div>
+        <div class="card-inner">
+          <div class="auth-heading">
+            <div class="auth-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5 14.1 9l5.5 2.1-5.5 2.1-2.1 5.5-2.1-5.5L4.4 11.1 9.9 9 12 3.5Z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg></div>
+            <p class="eyebrow">A FRESH START</p>
+            <h1 id="signup-title">Create your account</h1>
+            <p class="heading-copy" id="signup-copy">Make space for the work you love.</p>
+          </div>
+
+          <form class="auth-form signup-form" id="signup-form" novalidate>
+            <div class="form-fields">
+              <label class="field"><span>Username</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-3.4 3.1-5.5 7-5.5s6.5 2.1 7 5.5"/></svg><input name="username" type="text" autocomplete="username" placeholder="Choose a username" /></span></label>
+              <label class="field"><span>Email</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><input name="email" type="email" autocomplete="email" placeholder="Your email address" required /></span></label>
+              <label class="field"><span>Password</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input name="password" type="password" autocomplete="new-password" placeholder="Create a password" required minlength="8" /></span></label>
+            </div>
+            <button class="submit-button" type="submit"><span>Sign Up</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          </form>
+
+
+          <p class="form-status" id="signup-status" role="status" aria-live="polite"></p>
+          <p class="auth-footer">Already have an account? <a href="#login" data-switch="login">Log In</a></p>
+        </div>
+      </article>
+
+      <article class="auth-card login-card" id="login-card" aria-labelledby="login-title" hidden>
+        <div class="card-orb orb-one" aria-hidden="true"></div><div class="card-orb orb-two" aria-hidden="true"></div>
+        <div class="card-inner">
+          <div class="auth-heading">
+            <div class="auth-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5 14.1 9l5.5 2.1-5.5 2.1-2.1 5.5-2.1-5.5L4.4 11.1 9.9 9 12 3.5Z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg></div>
+            <p class="eyebrow">WELCOME BACK</p>
+            <h1 id="login-title">Good to see you</h1>
+            <p class="heading-copy">Pick up right where you left off.</p>
+          </div>
+          <form class="auth-form" id="login-form" novalidate>
+            <div class="form-fields">
+              
+              <label class="field" id="login-identifier-label"><span id="login-identifier-title">Email</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-3.4 3.1-5.5 7-5.5s6.5 2.1 7 5.5"/></svg><input name="email" id="login-identifier" type="email" autocomplete="email" placeholder="Your email address" required /></span></label>
+              <label class="field"><span>Password</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input name="password" type="password" autocomplete="current-password" placeholder="Your password" required /></span></label>
+            </div>
+            <div class="forgot-row"><button class="text-link" type="button" id="forgot-link">Forgot Password?</button></div>
+            <button class="submit-button" type="submit"><span>Log In</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            
+          </form>
+          <p class="form-status" id="login-status" role="status" aria-live="polite"></p>
+          <p class="auth-footer">Don't have an account? <a href="#signup" data-switch="signup">Sign Up</a></p>
+        </div>
+      </article>
+
+      <p class="stage-caption"><span class="caption-dot"></span> A little more room to do your best work</p>
+    </section>
+  </main>
+
+  <dialog class="reset-dialog" id="reset-dialog" aria-labelledby="reset-title">
+    <form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close">×</button></form>
+    <div class="dialog-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7.5 12 13l8-5.5"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></div>
+    <p class="eyebrow">ACCOUNT RECOVERY</p>
+    <h2 id="reset-title">Forgot your password?</h2>
+    <p class="dialog-copy">Enter the email address on your account and we’ll send a password reset link if it matches.</p>
+    <form id="reset-form" class="reset-form" novalidate><label class="field"><span>Email</span><span class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><input name="email" type="email" autocomplete="email" placeholder="Your email address" required /></span></label><button class="submit-button" type="submit"><span>Request reset link</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button></form>
+    <p class="reset-status" id="reset-status" role="status" aria-live="polite"></p>
+  </dialog>
+
+  <script type="module" src="auth-ui.js"></script>
+</body>
+</html>
